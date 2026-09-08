@@ -381,23 +381,23 @@
                 
                 <!-- Inner Orbit (01, 02) -->
                 <div class="memory-orbit orbit-a"></div>
-                <button class="memory-planet planet-1" onclick="showMemory(0)">01</button>
-                <button class="memory-planet planet-2" onclick="showMemory(1)">02</button>
-                
-                <!-- Middle Orbit (03, 04, 05) -->
-                <div class="memory-orbit orbit-b"></div>
-                <button class="memory-planet planet-3" onclick="showMemory(2)">03</button>
-                <button class="memory-planet planet-4" onclick="showMemory(3)">04</button>
-                <button class="memory-planet planet-5" onclick="showMemory(4)">05</button>
-                
-                <!-- Outer Orbit (06, 07, 08, 09, 10) -->
-                <div class="memory-orbit orbit-c"></div>
-                <button class="memory-planet planet-6" onclick="showMemory(5)">06</button>
-                <button class="memory-planet planet-7" onclick="showMemory(6)">07</button>
-                <button class="memory-planet planet-8" onclick="showMemory(7)">08</button>
-                <button class="memory-planet planet-9" onclick="showMemory(8)">09</button>
-                <button class="memory-planet planet-10" onclick="showMemory(9)">10</button>
-            </div>
+                        /* EXACT NON-OVERLAPPING COORDINATES FOR ALL 10 PLANETS */
+        /* Orbit A (Inner Orbit) */
+        .planet-1 { top: 62px; left: 50%; transform: translateX(-50%); }
+        .planet-2 { bottom: 62px; left: 50%; transform: translateX(-50%); }
+
+        /* Orbit B (Middle Orbit) */
+        .planet-3 { top: 60px; left: 45px; }
+        .planet-4 { top: 50%; right: 27px; transform: translateY(-50%); }
+        .planet-5 { bottom: 60px; left: 45px; }
+
+        /* Orbit C (Outer Orbit) */
+        .planet-6 { top: -8px; left: 50%; transform: translateX(-50%); }
+        .planet-7 { top: 50%; right: -8px; transform: translateY(-50%); }
+        .planet-8 { bottom: 15px; right: 25px; }
+        .planet-9 { bottom: 15px; left: 25px; }
+        .planet-10 { top: 50%; left: -8px; transform: translateY(-50%); }
+
 
             <!-- MEMORY POPUP -->
             <div id="memoryPopup" class="memory-popup">
