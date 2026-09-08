@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Aditi's Universe ✨</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <div id="stars"></div>
+
+    <div class="nebula nebula-one"></div>
+    <div class="nebula nebula-two"></div>
+
+    <!-- =========================
+         MUSIC
+    ========================== -->
+
+    <audio id="bgMusic" loop>
+        <source src="birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicBtn" class="music-btn"
+            onclick="toggleMusic()">
+        🎵
+    </button>
+
+
+    <!-- =========================
+         1. UNIVERSE ENTRY
+    ========================== -->
+
+    <section id="universePage"
+             class="page active">
+
+        <div class="universe-content">
+
+            <div class="tiny-label">
+                ✦ A SPECIAL UNIVERSE ✦
+            </div>
+
+            <h1 class="main-name">
+                ADITI
+            </h1>
+
+            <p class="subtitle">
+                A tiny universe of
+                beautiful moments
+            </p>
+
+            <div class="planet-container">
+
+                <div class="orbit orbit-1"></div>
+                <div class="orbit orbit-2"></div>
+
+                <div class="main-planet">
+                    <span>♡</span>
+                </div>
+
+            </div>
+
+            <p class="touch-text">
+                Touch the stars ✨
+            </p>
+
+            <button class="primary-btn"
+                    onclick="startUniverse()">
+                ENTER THE UNIVERSE ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         2. SECRET STAR
+    ========================== -->
+
+    <section id="starPage"
+             class="page">
+
+        <div class="star-scene">
+
+            <div class="glowing-star"
+                 onclick="openStarMessage()">
+
+                <span>★</span>
+
+            </div>
+
+            <p class="small-hint">
+                You found something... 👀
+            </p>
+
+            <div id="starMessage"
+                 class="secret-message">
+
+                <h2>
+                    Shhh... 💗
+                </h2>
+
+                <p>
+                    You are about to enter
+                    something made especially
+                    for you.
+                </p>
+
+                <button class="primary-btn"
+                        onclick="openMission()">
+                    TAKE ME THERE ✨
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         3. SPACE MISSION
+    ========================== -->
+
+    <section id="missionPage"
+             class="page">
+
+        <div class="mission-card">
+
+            <div class="rocket">
+                🚀
+            </div>
+
+            <p class="mission-label">
+                SECRET MISSION
+            </p>
+
+            <h1>
+                MAKE ADITI<br>
+                <span>SMILE</span>
+            </h1>
+
+            <div class="mission-status">
+
+                <div class="status-top">
+                    <span>MISSION STATUS</span>
+                    <span>99%</span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+
+            </div>
+
+            <p class="mission-text">
+                One final mission remains...
+            </p>
+
+            <button class="primary-btn"
+                    onclick="openMoon()">
+                LAUNCH 🚀
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         4. MOON MESSAGE
+    ========================== -->
+
+    <section id="moonPage"
+             class="page">
+
+        <div class="moon-scene">
+
+            <div class="moon">
+                🌙
+            </div>
+
+            <div class="moon-clouds"></div>
+
+            <div class="moon-message">
+
+                <p>
+                    There are billions of people
+                    in this world...
+                </p>
+
+                <p>
+                    But somehow, some people
+                    become a little universe
+                    of their own.
+                </p>
+
+                <h2>
+                    For me, that's you. 💗
+                </h2>
+
+                <button class="primary-btn"
+                        onclick="openMemories()">
+                    CONTINUE ✨
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         5. MEMORY PLANETS
+    ========================== -->
+
+    <section id="memoriesPage"
+             class="page">
+
+        <div class="memory-world">
+
+            <div class="section-label">
+                ✦ MEMORY GALAXY ✦
+            </div>
+
+            <h1>
+                Our Little Universe
+            </h1>
+
+            <p class="memory-intro">
+                Every little moment deserves
+                its own planet. 🪐
+            </p>
+
+
+            <div class="planet-system">
+
+                <div class="center-planet">
+                    ADITI
+                </div>
+
+                <div class="memory-orbit orbit-a">
+
+                    <button class="memory-planet planet-1"
+                            onclick="showMemory(0)">
+                        01
+                    </button>
+
+                    <button class="memory-planet planet-2"
+                            onclick="showMemory(1)">
+                        02
+                    </button>
+
+                </div>
+
+
+                <div class="memory-orbit orbit-b">
+
+                    <button class="memory-planet planet-3"
+                            onclick="showMemory(2)">
+                        03
+                    </button>
+
+                    <button class="memory-planet planet-4"
+                            onclick="showMemory(3)">
+                        04
+                    </button>
+
+                    <button class="memory-planet planet-5"
+                            onclick="showMemory(4)">
+                        05
+                    </button>
+
+                </div>
+
+
+                <div class="memory-orbit orbit-c">
+
+                    <button class="memory-planet planet-6"
+                            onclick="showMemory(5)">
+                        06
+                    </button>
+
+                    <button class="memory-planet planet-7"
+                            onclick="showMemory(6)">
+                        07
+                    </button>
+
+                    <button class="memory-planet planet-8"
+                            onclick="showMemory(7)">
+                        08
+                    </button>
+
+                    <button class="memory-planet planet-9"
+                            onclick="showMemory(8)">
+                        09
+                    </button>
+
+                    <button class="memory-planet planet-10"
+                            onclick="showMemory(9)">
+                        10
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MEMORY POPUP -->
+
+            <div id="memoryPopup"
+                 class="memory-popup">
+
+                <button class="close-memory"
+                        onclick="closeMemory()">
+                    ×
+                </button>
+
+                <div class="memory-photo">
+
+                    <img id="memoryImage"
+                         src="Photo1.jpg"
+                         alt="Memory">
+
+                </div>
+
+                <p id="memoryNumber">
+                    MEMORY #01
+                </p>
+
+                <h2 id="memoryTitle">
+                    A Beautiful Moment ✨
+                </h2>
+
+                <p id="memoryText">
+                    A little moment,
+                    a beautiful memory.
+                </p>
+
+                <button class="small-btn"
+                        onclick="nextMemory()">
+                    NEXT MEMORY →
+                </button>
+
+            </div>
+
+
+            <button class="primary-btn memory-next"
+                    onclick="openTransmission()">
+                CONTINUE JOURNEY ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         6. TRANSMISSION
+    ========================== -->
+
+    <section id="transmissionPage"
+             class="page">
+
+        <div class="transmission">
+
+            <div class="terminal">
+
+                <div class="terminal-dot"></div>
+
+                <p>
+                    TRANSMISSION RECEIVED
+                </p>
+
+                <span>
+                    FROM:
+                </span>
+
+                <strong>
+                    SOMEONE WHO
+                    CARES ABOUT YOU
+                </strong>
+
+                <div class="signal">
+                    ♥
+                </div>
+
+            </div>
+
+
+            <div class="envelope"
+                 onclick="openLetter()">
+
+                💌
+
+            </div>
+
+            <p>
+                Tap the envelope
+                to open the transmission.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         7. LETTER
+    ========================== -->
+
+    <section id="letterPage"
+             class="page">
+
+        <div class="letter-card">
+
+            <div class="letter-top">
+                💌
+            </div>
+
+            <p class="letter-small">
+                A MESSAGE FOR YOU
+            </p>
+
+            <h1>
+                Dear Aditi,
+            </h1>
+
+            <div id="letterText"
+                 class="letter-text">
+
+                <p>
+                    Some people enter our lives
+                    quietly...
+                </p>
+
+                <p>
+                    And somehow, without even
+                    realizing it, they become
+                    really special.
+                </p>
+
+                <p>
+                    You are one of those people.
+                    🤍
+                </p>
+
+                <p>
+                    On your birthday, I just want
+                    you to know that I hope life
+                    gives you countless reasons
+                    to smile.
+                </p>
+
+                <p>
+                    Keep being the wonderful
+                    person you are.
+                </p>
+
+                <p>
+                    Happy Birthday, Aditi. 🎂💗
+                </p>
+
+            </div>
+
+            <button class="primary-btn"
+                    onclick="openTimeMachine()">
+                TRAVEL THROUGH TIME ⏳
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         8. TIME MACHINE
+    ========================== -->
+
+    <section id="timePage"
+             class="page">
+
+        <div class="time-machine">
+
+            <div class="section-label">
+                ✦ TIME MACHINE ✦
+            </div>
+
+            <h1>
+                A Journey Through Time
+            </h1>
+
+            <div class="timeline">
+
+                <div class="time-point">
+
+                    <div class="time-icon">
+                        🌱
+                    </div>
+
+                    <h2>
+                        PAST
+                    </h2>
+
+                    <p>
+                        Beautiful moments
+                        that became memories.
+                    </p>
+
+                </div>
+
+
+                <div class="time-line"></div>
+
+
+                <div class="time-point now">
+
+                    <div class="time-icon">
+                        💗
+                    </div>
+
+                    <h2>
+                        NOW
+                    </h2>
+
+                    <p>
+                        Today is your day.
+                        🎂
+                    </p>
+
+                </div>
+
+
+                <div class="time-line"></div>
+
+
+                <div class="time-point">
+
+                    <div class="time-icon">
+                        ✨
+                    </div>
+
+                    <h2>
+                        FUTURE
+                    </h2>
+
+                    <p>
+                        More beautiful memories
+                        waiting to happen...
+                    </p>
+
+                </div>
+
+            </div>
+
+            <button class="primary-btn"
+                    onclick="openGift()">
+                THERE'S ONE MORE THING 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         9. UNKNOWN GIFT
+    ========================== -->
+
+    <section id="giftPage"
+             class="page">
+
+        <div class="gift-scene">
+
+            <p class="gift-label">
+                YOU WEREN'T SUPPOSED
+                TO FIND THIS...
+            </p>
+
+            <div id="giftBox"
+                 class="gift-box"
+                 onclick="openGiftBox()">
+
+                <div class="gift-lid"></div>
+
+                <div class="gift-body">
+
+                    <div class="gift-ribbon"></div>
+
+                    <span>
+                        ?
+                    </span>
+
+                </div>
+
+            </div>
+
+            <p id="giftHint">
+                TAP TO OPEN 🎁
+            </p>
+
+
+            <div id="giftMessage"
+                 class="gift-message">
+
+                <h1>
+                    SURPRISE! 💗
+                </h1>
+
+                <p>
+                    You deserve all the
+                    happiness in the universe.
+                </p>
+
+                <div class="gift-hearts">
+                    💕 ✨ 💗 ✨ 💕
+                </div>
+
+                <button class="primary-btn"
+                        onclick="openFinal()">
+                    ONE LAST SURPRISE 🌙
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         10. FINAL UNIVERSE
+    ========================== -->
+
+    <section id="finalPage"
+             class="page">
+
+        <div class="final-universe">
+
+            <div class="final-stars"></div>
+
+            <div class="tiny-planets">
+
+                <span>🪐</span>
+                <span>🌍</span>
+                <span>🪐</span>
+                <span>🌙</span>
+                <span>⭐</span>
+
+            </div>
+
+            <div class="astronaut">
+                👩🏻‍🚀
+            </div>
+
+            <p class="final-small">
+                THE UNIVERSE HAS A MESSAGE
+                FOR YOU...
+            </p>
+
+            <h1 class="final-name">
+                ADITI
+            </h1>
+
+            <h2>
+                HAPPY BIRTHDAY 💗
+            </h2>
+
+            <p class="final-message">
+                If the universe had a
+                favorite memory,
+                I'd hope it would be
+                one with you. ✨
+            </p>
+
+            <div class="final-love">
+                You make this world
+                a little more beautiful.
+            </div>
+
+            <button class="primary-btn"
+                    onclick="restartStory()">
+                ↻ EXPERIENCE AGAIN
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
