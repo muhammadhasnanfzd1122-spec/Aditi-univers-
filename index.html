@@ -7,7 +7,7 @@
     
     <style>
         /* =========================================
-           ADITI'S UNIVERSE — COMPLETE ALL-IN-ONE CSS
+           ADITI'S UNIVERSE — COMPLETE FIXED ALL-IN-ONE
         ========================================= */
         * {
             margin: 0;
@@ -55,7 +55,7 @@
             bottom: -50px;
         }
 
-        /* STRICT PAGE SYSTEM - PREVENTS OVERLAPPING */
+        /* PAGE SYSTEM */
         .page {
             position: fixed;
             inset: 0;
@@ -156,7 +156,7 @@
             box-shadow: 0 0 25px #d755e8;
         }
 
-        /* MEMORY GALAXY & PLANETS */
+        /* MEMORY GALAXY & PLANETS - CLICK ISSUE FIXED HERE */
         .memory-world {
             width: 100%;
             max-width: 500px;
@@ -186,6 +186,7 @@
             background: radial-gradient(circle, #ffb9ed, #a53fd0);
             box-shadow: 0 0 25px #dd61e8;
             z-index: 5;
+            pointer-events: none; /* Block na kare */
         }
 
         .memory-orbit {
@@ -195,42 +196,44 @@
             border: 1px dashed rgba(255,190,245,.3);
             border-radius: 50%;
             transform: translate(-50%, -50%);
+            pointer-events: none; /* KEY FIX: Circles won't block clicks */
         }
 
-        .orbit-a { width: 120px; height: 120px; }
-        .orbit-b { width: 190px; height: 190px; }
-        .orbit-c { width: 260px; height: 260px; }
+        .orbit-a { width: 120px; height: 120px; z-index: 10; }
+        .orbit-b { width: 190px; height: 190px; z-index: 8; }
+        .orbit-c { width: 260px; height: 260px; z-index: 6; }
 
         .memory-planet {
             position: absolute;
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            border: 1px solid rgba(255,255,255,.8);
+            border: 1px solid rgba(255,255,255,.9);
             color: #fff;
             background: #a53fd0;
-            box-shadow: 0 0 10px rgba(255,105,215,.8);
-            cursor: pointer;
-            font-size: 10px;
+            box-shadow: 0 0 12px rgba(255,105,215,1);
+            cursor: pointer !important;
+            font-size: 11px;
             font-weight: bold;
-            z-index: 50;
+            z-index: 999 !important; /* Always on top */
             display: flex;
             align-items: center;
             justify-content: center;
+            pointer-events: auto !important; /* Guaranteed Clickable */
         }
 
-        .planet-1 { top: -16px; left: 50%; transform: translateX(-50%); }
-        .planet-2 { bottom: -16px; left: 50%; transform: translateX(-50%); }
+        .planet-1 { top: -18px; left: 50%; transform: translateX(-50%); }
+        .planet-2 { bottom: -18px; left: 50%; transform: translateX(-50%); }
         .planet-3 { top: 10px; left: 10px; }
-        .planet-4 { top: 50%; right: -16px; transform: translateY(-50%); }
+        .planet-4 { top: 50%; right: -18px; transform: translateY(-50%); }
         .planet-5 { bottom: 10px; left: 10px; }
-        .planet-6 { top: -16px; left: 50%; transform: translateX(-50%); }
-        .planet-7 { top: 50%; right: -16px; transform: translateY(-50%); }
+        .planet-6 { top: -18px; left: 50%; transform: translateX(-50%); }
+        .planet-7 { top: 50%; right: -18px; transform: translateY(-50%); }
         .planet-8 { bottom: 10px; right: 20px; }
         .planet-9 { bottom: 10px; left: 20px; }
-        .planet-10 { top: 50%; left: -16px; transform: translateY(-50%); }
+        .planet-10 { top: 50%; left: -18px; transform: translateY(-50%); }
 
-        /* MEMORY POPUP - PERFECT CENTERED */
+        /* MEMORY POPUP */
         .memory-popup {
             position: fixed;
             left: 50%;
@@ -242,7 +245,7 @@
             background: rgba(18, 7, 35, 0.98);
             border: 1px solid rgba(255, 180, 240, 0.5);
             backdrop-filter: blur(20px);
-            z-index: 9999;
+            z-index: 99999;
             display: none;
             text-align: center;
             box-shadow: 0 0 30px rgba(0,0,0,0.8);
@@ -375,22 +378,25 @@
 
             <div class="planet-system">
                 <div class="center-planet">ADITI</div>
-                <div class="memory-orbit orbit-a">
-                    <button class="memory-planet planet-1" onclick="showMemory(0)">01</button>
-                    <button class="memory-planet planet-2" onclick="showMemory(1)">02</button>
-                </div>
-                <div class="memory-orbit orbit-b">
-                    <button class="memory-planet planet-3" onclick="showMemory(2)">03</button>
-                    <button class="memory-planet planet-4" onclick="showMemory(3)">04</button>
-                    <button class="memory-planet planet-5" onclick="showMemory(4)">05</button>
-                </div>
-                <div class="memory-orbit orbit-c">
-                    <button class="memory-planet planet-6" onclick="showMemory(5)">06</button>
-                    <button class="memory-planet planet-7" onclick="showMemory(6)">07</button>
-                    <button class="memory-planet planet-8" onclick="showMemory(7)">08</button>
-                    <button class="memory-planet planet-9" onclick="showMemory(8)">09</button>
-                    <button class="memory-planet planet-10" onclick="showMemory(9)">10</button>
-                </div>
+                
+                <!-- Inner Orbit (01, 02) -->
+                <div class="memory-orbit orbit-a"></div>
+                <button class="memory-planet planet-1" onclick="showMemory(0)">01</button>
+                <button class="memory-planet planet-2" onclick="showMemory(1)">02</button>
+                
+                <!-- Middle Orbit (03, 04, 05) -->
+                <div class="memory-orbit orbit-b"></div>
+                <button class="memory-planet planet-3" onclick="showMemory(2)">03</button>
+                <button class="memory-planet planet-4" onclick="showMemory(3)">04</button>
+                <button class="memory-planet planet-5" onclick="showMemory(4)">05</button>
+                
+                <!-- Outer Orbit (06, 07, 08, 09, 10) -->
+                <div class="memory-orbit orbit-c"></div>
+                <button class="memory-planet planet-6" onclick="showMemory(5)">06</button>
+                <button class="memory-planet planet-7" onclick="showMemory(6)">07</button>
+                <button class="memory-planet planet-8" onclick="showMemory(7)">08</button>
+                <button class="memory-planet planet-9" onclick="showMemory(8)">09</button>
+                <button class="memory-planet planet-10" onclick="showMemory(9)">10</button>
             </div>
 
             <!-- MEMORY POPUP -->
@@ -475,4 +481,4 @@
     <script src="script.js"></script>
 </body>
     </html>
-            
+    
